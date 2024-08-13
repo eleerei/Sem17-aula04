@@ -1,0 +1,14 @@
+def classificar_pedido(valor_pedido, dias_para_entrega):
+  if valor_pedido < 100 or dias_para_entrega > 7:
+      return "Normal"
+  elif 100 <= valor_pedido <= 500 and 4 <= dias_para_entrega <= 7:
+      return "Prioritário"
+  elif valor_pedido > 500 or dias_para_entrega < 4:
+      return "Urgente"
+  else:
+      return "Categoria desconhecida"  # Esse caso pode ser removido se a lógica estiver completa.
+
+# Exemplos de uso da função:
+print(classificar_pedido(50, 10))  # Deve retornar "Normal"
+print(classificar_pedido(150, 5))  # Deve retornar "Prioritário"
+print(classificar_pedido(600, 3))  # Deve retornar "Urgente"
